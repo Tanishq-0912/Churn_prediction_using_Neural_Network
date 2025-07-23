@@ -3,7 +3,8 @@ import pandas as pd
 import pickle
 
 # Load trained model
-model = pickle.load(open("model.pkl", "rb"))
+from keras.models import load_model
+model = load_model("model.keras")  # ✅ no pickle
 
 st.title("🏦 Bank Customer Churn Prediction")
 st.write("Enter customer details to check if they are likely to leave the bank.")
